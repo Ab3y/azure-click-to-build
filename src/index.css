@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-azure: #0078d4;
+  --color-azure-dark: #106ebe;
+  --color-azure-light: #50a3e5;
+  --sidebar-width: 320px;
+  --code-panel-width: 420px;
+}
+
+/* React Flow overrides */
+.react-flow__node {
+  cursor: grab;
+}
+.react-flow__node:active {
+  cursor: grabbing;
+}
+.react-flow__attribution {
+  display: none !important;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #a1a1aa;
+  border-radius: 3px;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #52525b;
+}
+
+/* Context menu animation */
+@keyframes contextMenuIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.context-menu-animate {
+  animation: contextMenuIn 0.12s ease-out;
+}
+
+/* Accordion transition */
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+
+/* Edge hover highlight */
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 3;
+}
+
+/* Node selection glow */
+.react-flow__node.selected {
+  filter: drop-shadow(0 0 8px rgba(0, 120, 212, 0.5));
+}
+
+/* Resource group node */
+.rg-node {
+  border-radius: 12px;
+  border: 2px dashed;
+  min-width: 200px;
+  min-height: 150px;
+}
