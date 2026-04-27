@@ -1,13 +1,14 @@
 {
   "name": "azure-click-to-build",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0-beta",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npx serve dist -s -l 8080"
   },
   "dependencies": {
     "@dagrejs/dagre": "^3.0.0",
@@ -20,6 +21,7 @@
     "lz-string": "^1.5.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
+    "serve": "^14.2.6",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.5.0",
     "zustand": "^5.0.12"
